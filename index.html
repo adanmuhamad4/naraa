@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Maafin Aku Ya 💖</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins', sans-serif;
+    }
+
+    body{
+      min-height:100vh;
+      overflow:hidden;
+      background:linear-gradient(135deg,#ffb6d9,#ffd6ec,#ffeef7);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:15px;
+      position:relative;
+    }
+
+    /* LOVE */
+    .love{
+      position:absolute;
+      color:#ff4f93;
+      animation:jatuh linear infinite;
+      opacity:0.7;
+      z-index:1;
+    }
+
+    @keyframes jatuh{
+
+      0%{
+        transform:translateY(-100px) rotate(0deg);
+      }
+
+      100%{
+        transform:translateY(110vh) rotate(360deg);
+      }
+
+    }
+
+    /* CONTAINER */
+    .container{
+      width:100%;
+      max-width:360px;
+      background:white;
+      border-radius:30px;
+      padding:25px 20px;
+      text-align:center;
+      box-shadow:0 15px 40px rgba(255,105,180,0.3);
+      position:relative;
+      z-index:2;
+      animation:muncul 1s ease;
+    }
+
+    @keyframes muncul{
+
+      from{
+        opacity:0;
+        transform:translateY(50px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+
+    }
+
+    /* SLIDESHOW */
+    .slideshow{
+      position:relative;
+      width:100%;
+      height:250px;
+      margin-bottom:20px;
+    }
+
+    .slide{
+      position:absolute;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      border-radius:25px;
+      border:5px solid #ff8fbe;
+      box-shadow:0 10px 25px rgba(255,105,180,0.4);
+
+      opacity:0;
+      transition:1s;
+      transform:scale(0.9);
+    }
+
+    .slide.active{
+      opacity:1;
+      transform:scale(1);
+    }
+
+    /* TEXT */
+    h1{
+      color:#ff3d87;
+      font-size:30px;
+      margin-bottom:12px;
+    }
+
+    p{
+      color:#555;
+      font-size:15px;
+      line-height:1.7;
+      margin-bottom:25px;
+    }
+
+    /* BUTTON */
+    .btn-group{
+      position:relative;
+      height:60px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:15px;
+    }
+
+    button{
+      border:none;
+      padding:13px 18px;
+      border-radius:15px;
+      font-size:14px;
+      font-weight:bold;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .yes{
+      background:#ff4f93;
+      color:white;
+      box-shadow:0 5px 15px rgba(255,79,147,0.4);
+    }
+
+    .yes:active{
+      transform:scale(0.95);
+    }
+
+    .no{
+      background:#eee;
+      color:#555;
+      position:absolute;
+      right:10px;
+    }
+
+    /* POPUP */
+    .popup{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.5);
+      display:none;
+      justify-content:center;
+      align-items:center;
+      z-index:999;
+      padding:20px;
+    }
+
+    .popup-box{
+      width:100%;
+      max-width:320px;
+      background:white;
+      border-radius:25px;
+      padding:25px;
+      text-align:center;
+      animation:zoom 0.4s ease;
+    }
+
+    @keyframes zoom{
+
+      from{
+        transform:scale(0.5);
+        opacity:0;
+      }
+
+      to{
+        transform:scale(1);
+        opacity:1;
+      }
+
+    }
+
+    .popup-box img{
+      width:120px;
+      margin-bottom:10px;
+    }
+
+    .popup h2{
+      color:#ff3d87;
+      margin-bottom:10px;
+    }
+
+    .popup p{
+      font-size:14px;
+      margin-bottom:20px;
+    }
+
+    .close{
+      background:#ff4f93;
+      color:white;
+    }
+
+    /* TOMBOL MUSIK */
+    .musik{
+      position:fixed;
+      top:15px;
+      right:15px;
+      z-index:1000;
+
+      background:#ff4f93;
+      color:white;
+
+      border:none;
+      border-radius:50px;
+
+      padding:12px 15px;
+
+      font-size:14px;
+      font-weight:bold;
+
+      box-shadow:0 5px 15px rgba(255,79,147,0.4);
+    }
+
+    .musik:active{
+      transform:scale(0.95);
+    }
+
+    /* RESPONSIVE EXTRA */
+    @media(max-width:400px){
+
+      .container{
+        padding:20px 15px;
+      }
+
+      .slideshow{
+        height:220px;
+      }
+
+      h1{
+        font-size:25px;
+      }
+
+      p{
+        font-size:14px;
+      }
+
+      button{
+        font-size:13px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- LOVE -->
+  <script>
+
+    for(let i=0;i<35;i++){
+
+      let love=document.createElement("div");
+
+      love.classList.add("love");
+
+      love.innerHTML="💖";
+
+      love.style.left=Math.random()*100+"vw";
+
+      love.style.fontSize=(Math.random()*20+15)+"px";
+
+      love.style.animationDuration=(Math.random()*5+5)+"s";
+
+      document.body.appendChild(love);
+
+    }
+
+  </script>
+
+  <!-- MUSIK -->
+  <button class="musik" onclick="playMusic()">
+    🎵
+  </button>
+
+  <audio id="lagu" loop>
+    <source src="https://files.catbox.moe/3f9l6x.mp3" type="audio/mp3">
+  </audio>
+
+  <!-- CONTAINER -->
+  <div class="container">
+
+    <!-- SLIDESHOW -->
+    <div class="slideshow">
+
+      <img class="slide active" src="foto1.jpg">
+      <img class="slide" src="foto2.jpg">
+      <img class="slide" src="foto3.jpg">
+      <img class="slide" src="foto4.jpg">
+
+    </div>
+
+    <h1>Maafin Aku Ya 🥺</h1>
+
+    <p>
+      Aku tau aku salah...  
+      Aku cuma pengen bilang kalau kamu itu sangat berarti buat aku 💕  
+      Jangan marah lama-lama yaa 😭
+    </p>
+
+    <!-- BUTTON -->
+    <div class="btn-group">
+
+      <button class="yes" onclick="munculPopup()">
+        Iya Aku Maafin 💖
+      </button>
+
+      <button class="no" id="noBtn">
+        Enggak 😤
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- POPUP -->
+  <div class="popup" id="popup">
+
+    <div class="popup-box">
+
+      <img src="https://media.tenor.com/qj5evVs-_uUAAAAi/love-bear.gif">
+
+      <h2>Yeeey 💕</h2>
+
+      <p>
+        Makasih udah maafin aku 🥺💖  
+        Aku janji bakal jadi lebih baik buat kamu ✨
+      </p>
+
+      <button class="close" onclick="tutupPopup()">
+        Peluk Virtual 🤗
+      </button>
+
+    </div>
+
+  </div>
+
+  <script>
+
+    /* SLIDESHOW */
+
+    const slides=document.querySelectorAll(".slide");
+
+    let index=0;
+
+    setInterval(()=>{
+
+      slides[index].classList.remove("active");
+
+      index=(index+1)%slides.length;
+
+      slides[index].classList.add("active");
+
+    },2500);
+
+
+    /* TOMBOL KABUR */
+
+    const noBtn=document.getElementById("noBtn");
+
+    noBtn.addEventListener("touchstart",kabur);
+    noBtn.addEventListener("mouseover",kabur);
+
+    function kabur(){
+
+      const x=Math.random()*120-60;
+
+      const y=Math.random()*80-40;
+
+      noBtn.style.transform=`translate(${x}px,${y}px)`;
+
+    }
+
+
+    /* POPUP */
+
+    function munculPopup(){
+
+      document.getElementById("popup").style.display="flex";
+
+      confetti();
+
+    }
+
+    function tutupPopup(){
+
+      document.getElementById("popup").style.display="none";
+
+    }
+
+
+    /* MUSIK */
+
+    function playMusic(){
+
+      document.getElementById("lagu").play();
+
+    }
+
+
+    /* CONFETTI */
+
+    function confetti(){
+
+      for(let i=0;i<30;i++){
+
+        let conf=document.createElement("div");
+
+        conf.innerHTML="🎉";
+
+        conf.style.position="fixed";
+
+        conf.style.left=Math.random()*100+"vw";
+
+        conf.style.top="-20px";
+
+        conf.style.fontSize="25px";
+
+        conf.style.zIndex="9999";
+
+        conf.style.animation="jatuh 3s linear forwards";
+
+        document.body.appendChild(conf);
+
+        setTimeout(()=>{
+          conf.remove();
+        },3000);
+
+      }
+
+    }
+
+  </script>
+
+</body>
+</html>
