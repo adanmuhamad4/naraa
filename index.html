@@ -76,11 +76,19 @@
 
     /* SLIDESHOW */
     .slideshow{
-      position:relative;
-      width:100%;
-      height:250px;
-      margin-bottom:20px;
-    }
+  position:relative;
+
+  width:250px;
+  height:250px;
+
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom:20px;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
 
     .slide{
       position:absolute;
@@ -117,13 +125,13 @@
 
     /* BUTTON */
     .btn-group{
-      position:relative;
-      height:60px;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      gap:15px;
-    }
+  position:relative;
+  height:90px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:15px;
+}
 
     button{
       border:none;
@@ -146,11 +154,10 @@
     }
 
     .no{
-      background:#eee;
-      color:#555;
-      position:absolute;
-      right:10px;
-    }
+  background:#eee;
+  color:#555;
+  position:absolute;
+}
 
     /* POPUP */
     .popup{
@@ -237,8 +244,22 @@
     @media(max-width:400px){
 
       .container{
-        padding:20px 15px;
-      }
+  width:100%;
+  max-width:360px;
+  background:white;
+  border-radius:30px;
+  padding:25px 20px;
+  text-align:center;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+
+  box-shadow:0 15px 40px rgba(255,105,180,0.3);
+
+  position:relative;
+  z-index:2;
+}
 
       .slideshow{
         height:220px;
@@ -311,9 +332,9 @@
     <h1>Maafin Aku Ya 🥺</h1>
 
     <p>
-      Aku tau aku salah...  
-      Aku cuma pengen bilang kalau kamu itu sangat berarti buat aku 💕  
-      Jangan marah lama-lama yaa 😭
+      Hara minta maaf ya sayangkuuu
+      Kalo udah bikin nayin badmood sama bikin nayin marahh
+      Maafin Hara Ya Nayin Sayangg
     </p>
 
     <!-- BUTTON -->
